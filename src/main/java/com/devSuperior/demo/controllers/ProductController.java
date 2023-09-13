@@ -1,0 +1,31 @@
+package com.devSuperior.demo.controllers;
+
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.devSuperior.demo.entities.Department;
+import com.devSuperior.demo.entities.Product;
+
+@RestController
+@RequestMapping(value = "/products")
+public class ProductController {
+    
+    @GetMapping
+    public List<Product>getObjects(){
+        Department d1 = new Department(1L,"Tech");
+        Department d2 = new Department(2L, "Pet");
+        
+        Product p1 = new Product(1L, "MackBook Pro", 4000, d1);  
+        Product p2 = new Product(2L, "MackBook Pro", 5000, d1);
+        Product p3 = new Product(3L,"Casa de pet ", 300, d2);
+
+
+        List<Product> list = Arrays.asList(p1,p2,p3);
+        return list;
+    }
+}
