@@ -1,4 +1,4 @@
-package com.devSuperior.demo.entities;
+package com.devsuperior.demo.entities;
 
 public class Product {
     private long id;
